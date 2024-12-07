@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "shit",
+	"version": "${version}",
+	"name": "Slightly Helpful Improvised Tweaks",
+	"description": "This is my first mod ever, and I am to adding additional features to the game to make 'useless features', useful once more!'",
+	"authors": [
+		"QuarterSalt"
+	],
+	"contact": {
+		"homepage": "https://quartersalt.net",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/shit/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.quartersalt.shit.SlightlyHelpfulImprovisedTweaks"
+		],
+		"fabric-datagen": [
+			"net.quartersalt.shit.SlightlyHelpfulImprovisedTweaksDataGenerator"
+		],
+		"client": [
+			"net.quartersalt.shit.SHITClient"
+		]
+	},
+	"mixins": [
+		"shit.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
