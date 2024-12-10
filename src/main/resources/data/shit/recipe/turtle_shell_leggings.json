@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "combat",
+  "key": {
+    "H": {
+      "item": "shit:hardened_turtle_shell"
+    },
+    "T": {
+      "item": "shit:twine"
+    }
+  },
+  "pattern": [
+    "HHH",
+    "HTH",
+    "H H"
+  ],
+  "result": {
+    "count": 1,
+    "id": "shit:turtle_shell_leggings"
+  }
+}

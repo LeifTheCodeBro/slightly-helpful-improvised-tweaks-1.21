@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "ingredients",
+  "key": {
+    "#": {
+      "item": "minecraft:short_grass"
+    },
+    "W": {
+      "item": "minecraft:wheat"
+    }
+  },
+  "pattern": [
+    "#W",
+    "W#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "shit:twine"
+  }
+}
