@@ -26,10 +26,10 @@ public class ModItems {
                     new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(55)).rarity(Rarity.UNCOMMON)));
     public static final Item ARMADILLO_PLATE_LEGGINGS = registerItem("armadillo_plate_leggings",
             new ModArmorItem(ModArmorMaterials.ARMADILLO_PLATE, ArmorItem.Type.LEGGINGS,
-                    new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(55)).rarity(Rarity.UNCOMMON)));
+                    new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(55)).rarity(Rarity.UNCOMMON)));
     public static final Item ARMADILLO_PLATE_BOOTS = registerItem("armadillo_plate_boots",
-            new ModArmorItem(ModArmorMaterials.ARMADILLO_PLATE, ArmorItem.Type.CHESTPLATE,
-                    new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(55)).rarity(Rarity.UNCOMMON)));
+            new ModArmorItem(ModArmorMaterials.ARMADILLO_PLATE, ArmorItem.Type.BOOTS,
+                    new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(55)).rarity(Rarity.UNCOMMON)));
 
     public static final Item HARDENED_TURTLE_SHELL = registerItem("hardened_turtle_shell", new Item(new Item.Settings()));
 
