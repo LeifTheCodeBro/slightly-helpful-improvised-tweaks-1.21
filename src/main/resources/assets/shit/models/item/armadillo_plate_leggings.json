@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "shit:item/armadillo_plate_leggings"
+  }
+}

@@ -1,12 +1,20 @@
 {
   "item.shit.twine": "Twine",
   "item.shit.hardened_armadillo_plate": "Hardened Armadillo Plate",
+  "item.shit.armadillo_plate_chestplate": "Armadillo Plate Chestplate",
+  "item.shit.armadillo_plate_helmet": "Armadillo Plate Helmet",
+  "item.shit.armadillo_plate_leggings": "Armadillo Plate Leggings",
+  "item.shit.armadillo_plate_boots": "Armadillo Plate Boots",
   "item.shit.hardened_turtle_shell": "Hardened Turtle Shell",
   "item.shit.turtle_shell_chestplate": "Turtle Shell Chestplate",
   "item.shit.turtle_shell_helmet": "Turtle Shell Helmet",
   "item.shit.turtle_shell_leggings": "Turtle Shell Leggings",
   "item.shit.turtle_shell_boots": "Turtle Shell Boots",
-  "item.shit.turtle_essence": "Turtle Essence",
+  "item.shit.sea_essence": "Sea Essence",
+  "item.shit.turtle_master_helmet": "Turtle Master Helmet",
+  "item.shit.turtle_master_chestplate": "Turtle Master Chestplate",
+  "item.shit.turtle_master_leggings": "Turtle Master Leggings",
+  "item.shit.turtle_master_boots": "Turtle Master Boots",
 
   "itemgroup.shit.shit_resources": "Resources",
   "itemgroup.shit.shit_armor_and_tools": "Armor and Tools"

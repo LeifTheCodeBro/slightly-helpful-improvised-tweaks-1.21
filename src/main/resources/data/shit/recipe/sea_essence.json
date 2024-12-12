@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "ingredients",
+  "key": {
+    "C": {
+      "item": "minecraft:heart_of_the_sea"
+    },
+    "H": {
+      "item": "shit:hardened_turtle_shell"
+    },
+    "S": {
+      "item": "minecraft:prismarine_crystal"
+    }
+  },
+  "pattern": [
+    "SHS",
+    "HCH",
+    "SHS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "shit:sea_essence"
+  }
+}

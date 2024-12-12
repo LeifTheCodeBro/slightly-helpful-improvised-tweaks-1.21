@@ -11,17 +11,6 @@ import net.quartersalt.shit.SlightlyHelpfulImprovisedTweaks;
 
 public class ModItemGroups {
 
-    public static final ItemGroup SHIT_RESOURCES_GROUP = Registry.register(Registries.ITEM_GROUP,
-            Identifier.of(SlightlyHelpfulImprovisedTweaks.MOD_ID, "shit_resources"),
-            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.HARDENED_ARMADILLO_PLATE))
-                    .displayName(Text.translatable("itemgroup.shit.shit_resources"))
-                    .entries((displayContext, entries) -> {
-                        entries.add(ModItems.TWINE);
-                        entries.add(ModItems.HARDENED_ARMADILLO_PLATE);
-                        entries.add(ModItems.HARDENED_TURTLE_SHELL);
-                        entries.add(ModItems.TURTLE_ESSENCE);
-                    }).build());
-
     public static final ItemGroup SHIT_ARMOR_WEAPONS_AND_TOOL_GROUP = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(SlightlyHelpfulImprovisedTweaks.MOD_ID, "shit_armor_tools"),
             FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.TURTLE_SHELL_CHESTPLATE))
@@ -31,6 +20,25 @@ public class ModItemGroups {
                         entries.add(ModItems.TURTLE_SHELL_CHESTPLATE);
                         entries.add(ModItems.TURTLE_SHELL_LEGGINGS);
                         entries.add(ModItems.TURTLE_SHELL_BOOTS);
+                        entries.add(ModItems.TURTLE_MASTER_HELMET);
+                        entries.add(ModItems.TURTLE_MASTER_CHESTPLATE);
+                        entries.add(ModItems.TURTLE_MASTER_LEGGINGS);
+                        entries.add(ModItems.TURTLE_MASTER_BOOTS);
+                        entries.add(ModItems.ARMADILLO_PLATE_HELMET);
+                        entries.add(ModItems.ARMADILLO_PLATE_CHESTPLATE);
+                        entries.add(ModItems.ARMADILLO_PLATE_LEGGINGS);
+                        entries.add(ModItems.ARMADILLO_PLATE_BOOTS);
+                    }).build());
+
+    public static final ItemGroup SHIT_RESOURCES_GROUP = Registry.register(Registries.ITEM_GROUP,
+            Identifier.of(SlightlyHelpfulImprovisedTweaks.MOD_ID, "shit_resources"),
+            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.HARDENED_ARMADILLO_PLATE))
+                    .displayName(Text.translatable("itemgroup.shit.shit_resources"))
+                    .entries((displayContext, entries) -> {
+                        entries.add(ModItems.TWINE);
+                        entries.add(ModItems.HARDENED_ARMADILLO_PLATE);
+                        entries.add(ModItems.HARDENED_TURTLE_SHELL);
+                        entries.add(ModItems.SEA_ESSENCE);
                     }).build());
 
     public static void registerItemGroups() {
