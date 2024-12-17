@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "combat",
+  "key": {
+    "H": {
+      "item": "shit:hardened_armadillo_plate"
+    },
+    "T": {
+      "item": "shit:twine"
+    }
+  },
+  "pattern": [
+    "HHH",
+    "HTH"
+  ],
+  "result": {
+    "count": 1,
+    "id": "shit:armadillo_plate_helmet"
+  }
+}

@@ -14,12 +14,11 @@
 	"license": "MIT",
 	"icon": "assets/shit/icon.png",
 	"environment": "*",
-	"entrypoints": {
+	"entrypoints": {"fabric-datagen": [
+		"net.quartersalt.shit.SlightlyHelpfulImprovisedTweaksDataGenerator"
+		],
 		"main": [
 			"net.quartersalt.shit.SlightlyHelpfulImprovisedTweaks"
-		],
-		"fabric-datagen": [
-			"net.quartersalt.shit.SlightlyHelpfulImprovisedTweaksDataGenerator"
 		],
 		"client": [
 			"net.quartersalt.shit.SHITClient"

@@ -22,14 +22,12 @@ public class ModArmorItem extends ArmorItem {
     private static final Map<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>>())
                     .put(ModArmorMaterials.TURTLE_MASTER,
-                            List.of(new StatusEffectInstance(StatusEffects.CONDUIT_POWER, 60, 2, false, false),
-                                    new StatusEffectInstance(StatusEffects.DOLPHINS_GRACE, 60, 3, false, false),
-                                    new StatusEffectInstance(StatusEffects.SLOWNESS, 60, 0, false, false),
-                                    new StatusEffectInstance(StatusEffects.RESISTANCE, 60, 0, false, false)))
+                            List.of(new StatusEffectInstance(StatusEffects.CONDUIT_POWER, 60, 0, false, false),
+                                    new StatusEffectInstance(StatusEffects.DOLPHINS_GRACE, 60, 2, false, false),
+                                    new StatusEffectInstance(StatusEffects.RESISTANCE, 60, 2, false, false)))
                     .put(ModArmorMaterials.TURTLE_SHELL,
                             List.of(new StatusEffectInstance(StatusEffects.WATER_BREATHING, 60, 0, false, false),
-                                    new StatusEffectInstance(StatusEffects.SLOWNESS, 60, 0, false, false),
-                                    new StatusEffectInstance(StatusEffects.DOLPHINS_GRACE, 60, 2, false, false))).build();
+                                    new StatusEffectInstance(StatusEffects.DOLPHINS_GRACE, 60, 0, false, false))).build();
 
     // Variable to track time
     private long lastHealTime = 0;
@@ -43,6 +41,7 @@ public class ModArmorItem extends ArmorItem {
         if (!world.isClient()) {
             if (entity instanceof ServerPlayerEntity player) {
 
+                applySprintEffect(player);
                 applySneakEffect(player);
 
                 long currentTime = world.getTime();
@@ -63,6 +62,48 @@ public class ModArmorItem extends ArmorItem {
         super.inventoryTick(stack, world, entity, slot, selected);
     }
 
+    private void applySprintEffect(PlayerEntity player) {
+        // Check if the player is sprinting
+        if (player.isSprinting()) {
+            // Check if the player is wearing the full Armadillo armor
+            if (hasFullArmadilloArmor(player)) {
+                // Define a list of effects to apply
+                List<StatusEffectInstance> effectsToApply = List.of(
+                        new StatusEffectInstance(StatusEffects.SPEED, 60, 0, false, false),
+                        (new StatusEffectInstance(StatusEffects.WEAKNESS, 60, 0, false, false)));
+
+                // Iterate over the effects
+                for (StatusEffectInstance effect : effectsToApply) {
+                    // Check if the player already has the effect (to prevent stacking)
+                    if (player.getStatusEffect(effect.getEffectType()) == null || Objects.requireNonNull(player.getStatusEffect(effect.getEffectType())).getDuration() <= 30) {
+                        // Apply the effect if not present or if the effect has a short duration left
+                        player.addStatusEffect(effect);
+                    }
+                }
+            }
+        }
+    }
+
+    private boolean hasFullArmadilloArmor(PlayerEntity player) {
+        // Check if the player is wearing the full ARMADILLO_PLATE armor set
+        ItemStack boots = player.getInventory().getArmorStack(0); // Boots
+        ItemStack leggings = player.getInventory().getArmorStack(1); // Leggings
+        ItemStack chestplate = player.getInventory().getArmorStack(2); // Chestplate
+        ItemStack helmet = player.getInventory().getArmorStack(3); // Helmet
+
+        // Ensure all pieces are not empty and match the ARMADILLO_PLATE material
+        return !boots.isEmpty() && !leggings.isEmpty() && !chestplate.isEmpty() && !helmet.isEmpty() &&
+                isArmadilloArmor(helmet) && isArmadilloArmor(chestplate) &&
+                isArmadilloArmor(leggings) && isArmadilloArmor(boots);
+    }
+
+    private boolean isArmadilloArmor(ItemStack stack) {
+        if (stack.getItem() instanceof ArmorItem armorItem) {
+            return armorItem.getMaterial() == ModArmorMaterials.ARMADILLO_PLATE;
+        }
+        return false;
+    }
+
     private void applySneakEffect(PlayerEntity player) {
         // Check if the player is sneaking
         if (player.isSneaking()) {
@@ -70,8 +111,8 @@ public class ModArmorItem extends ArmorItem {
             if (hasFullTurtleMasterArmor(player)) {
                 // Define a list of effects to apply
                 List<StatusEffectInstance> effectsToApply = List.of(
-                        new StatusEffectInstance(StatusEffects.RESISTANCE, 60, 2, false, false),
-                        new StatusEffectInstance(StatusEffects.SLOWNESS, 60, 2, false, false)
+                        new StatusEffectInstance(StatusEffects.RESISTANCE, 60, 3, false, false),
+                        new StatusEffectInstance(StatusEffects.SLOWNESS, 60, 0, false, false)
                 );
 
                 // Iterate over the effects

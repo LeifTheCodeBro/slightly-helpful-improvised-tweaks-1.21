@@ -18,11 +18,11 @@ import java.util.function.Supplier;
 public class ModArmorMaterials {
     public static final RegistryEntry<ArmorMaterial> ARMADILLO_PLATE = registerArmorMaterial("armadillo_plate",
             () -> new ArmorMaterial(Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 2);
-                map.put(ArmorItem.Type.LEGGINGS, 5);
-                map.put(ArmorItem.Type.CHESTPLATE, 6);
-                map.put(ArmorItem.Type.HELMET, 2);
-                map.put(ArmorItem.Type.BODY, 5);
+                map.put(ArmorItem.Type.BOOTS, 3);
+                map.put(ArmorItem.Type.LEGGINGS, 6);
+                map.put(ArmorItem.Type.CHESTPLATE, 7);
+                map.put(ArmorItem.Type.HELMET, 3);
+                map.put(ArmorItem.Type.BODY, 10);
             }), 0,SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, () -> Ingredient.ofItems(ModItems.HARDENED_ARMADILLO_PLATE),
                     List.of(new ArmorMaterial.Layer(Identifier.of(SlightlyHelpfulImprovisedTweaks.MOD_ID, "armadillo_plate_armor"))), 2.0F, 0.0F));
 
@@ -32,7 +32,7 @@ public class ModArmorMaterials {
                 map.put(ArmorItem.Type.LEGGINGS, 5);
                 map.put(ArmorItem.Type.CHESTPLATE, 6);
                 map.put(ArmorItem.Type.HELMET, 2);
-                map.put(ArmorItem.Type.BODY, 5);
+                map.put(ArmorItem.Type.BODY, 8);
             }), 0,SoundEvents.ITEM_ARMOR_EQUIP_TURTLE, () -> Ingredient.ofItems(ModItems.HARDENED_TURTLE_SHELL),
                     List.of(new ArmorMaterial.Layer(Identifier.of(SlightlyHelpfulImprovisedTweaks.MOD_ID, "turtle_shell_armor"))), 2.0F, 0.0F));
 

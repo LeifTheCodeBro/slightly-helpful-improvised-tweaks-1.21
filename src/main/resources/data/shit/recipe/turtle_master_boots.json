@@ -2,38 +2,23 @@
   "type": "minecraft:crafting_shaped",
   "category": "combat",
   "key": {
-    "1": {
-      "item": "minecraft:turtle_egg"
-    },
-    "2": {
-      "item": "minecraft:turtle_helmet"
-    },
-    "3": {
-      "item": "minecraft:glow_ink_sac"
-    },
-    "4": {
-      "item": "minecraft:phantom_membrane"
-    },
-    "5": {
+    "A": {
       "item": "shit:turtle_shell_boots"
     },
-    "6": {
-      "item": "minecraft:rabbit_foot"
-    },
-    "7": {
-      "item": "minecraft:prismarine_shard"
-    },
-    "8": {
+    "E": {
       "item": "shit:sea_essence"
     },
-    "9": {
-      "item": "minecraft:nautilus_shell"
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "S": {
+      "item": "minecraft:turtle_helmet"
     }
   },
   "pattern": [
-    "123",
-    "456",
-    "789"
+    " S ",
+    "DAD",
+    " E "
   ],
   "result": {
     "count": 1,

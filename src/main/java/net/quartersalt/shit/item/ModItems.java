@@ -60,7 +60,7 @@ public class ModItems {
                     new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(65)).rarity(Rarity.EPIC).fireproof()));
 
     public static final Item SEA_ESSENCE = registerItem("sea_essence",
-            new Item(new Item.Settings().rarity(Rarity.UNCOMMON)));
+            new Item(new Item.Settings().rarity(Rarity.RARE)));
 
     // Helper Method
 
